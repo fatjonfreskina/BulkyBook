@@ -6,7 +6,7 @@ namespace BulkyBookWeb.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly ILogger<HomeController> _logger; // Dependency injection
 
         public HomeController(ILogger<HomeController> logger)
         {
@@ -15,10 +15,10 @@ namespace BulkyBookWeb.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            return View(); // Which view will be returned? The one inside Views/Home/Index !
         }
 
-        public IActionResult Privacy()
+        public IActionResult Privacy() // if user goes to Home/Privacy {controller}/{action}, this method will be called
         {
             return View();
         }
