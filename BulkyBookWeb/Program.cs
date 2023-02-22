@@ -5,7 +5,12 @@ builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
 
+// A pipeline is where a request from the browser goes and the response is sent.
+// Some middlewares are triggered in between
+// The order of the pipelines here is very important: Authentication should come before authorization for example!
 // Configure the HTTP request pipeline.
+
+
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
@@ -13,7 +18,10 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+// Middleware
 app.UseHttpsRedirection();
+
+// Middleware to use static files
 app.UseStaticFiles();
 
 app.UseRouting();
