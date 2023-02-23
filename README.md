@@ -22,8 +22,28 @@ app.MapControllerRoute(
 
 If controller and action are not defined in the request they will be these ones as default
 
-## Controllers
+## Controllers folder
 
 HomeController.cs : always end the name with Controller. 
 
 HomeController will create a Home Folder in view. All the views or ui displayed with the home controller will be placed in the home folder.
+
+## Views folder
+
+```
+Views  
+│   _ViewImports.cshtml
+│   _ViewStart.cshtml
+│
+├───Home
+│       Index.cshtml
+│       Privacy.cshtml
+│
+└───Shared
+        Error.cshtml
+        _Layout.cshtml
+        _Layout.cshtml.css
+        _ValidationScriptsPartial.cshtml
+  ```
+  
+  There is a main layout defined in \_Layout.cshtml (containing head, header, nav bar, footer, imports..) and a div that gets filled with the appropriate content in the Home folder. 
