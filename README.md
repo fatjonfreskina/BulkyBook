@@ -32,7 +32,7 @@ HomeController will create a Home Folder in view. All the views or ui displayed 
 
 ```
 Views  
-│   _ViewImports.cshtml
+│   _ViewImports.cshtml // import namespaces; @taghelpers
 │   _ViewStart.cshtml
 │
 ├───Home
@@ -46,4 +46,6 @@ Views
         _ValidationScriptsPartial.cshtml
   ```
   
-  There is a main layout defined in \_Layout.cshtml (containing head, header, nav bar, footer, imports..) and a div that gets filled with the appropriate content in the Home folder. 
+There is a main layout defined in \_Layout.cshtml (containing head, header, nav bar, footer, imports..) and a div that gets filled with the appropriate content in the Home folder. 
+
+TagHelpers look like html tags but start with `asp`: asp-controller; asp-action
