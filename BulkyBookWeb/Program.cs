@@ -1,8 +1,14 @@
+using BulkyBookWeb.Data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+// This tells our app to initialise the Service and passes the connection string
+builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(
+    builder.Configuration.GetConnectionString("SQLConnectionString")));
 var app = builder.Build();
 
 // A pipeline is where a request from the browser goes and the response is sent.
