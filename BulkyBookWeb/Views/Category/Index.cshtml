@@ -1,9 +1,31 @@
-﻿@model List<Category>
+﻿@*
+    The List<Category> is the model passed by the controller. If the controller sends to View a model, it must match the one declared here
+*@
+@model List<Category>
 @{
     ViewData["Title"] = "Index";
 }
 
-<h1>Index Category</h1>
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-8">
+            <h2 class="text-primary">Category List</h2>
+        </div>
+        <div class="col-2">
+            <a asp-controller="Category" asp-action="Delete" class="btn btn-primary">
+                <i class="bi bi-dash-circle"></i> &nbsp Delete category
+            </a>
+        </div>
+        <div class="col-2 text-end">
+            <a asp-controller="Category" asp-action="Create" class="btn btn-primary">
+                <i class="bi bi-plus-circle-fill"></i> &nbsp Create category
+            </a>
+        </div>
+    </div>
+</div>
+
+<br />
+
 <table class ="table table-bordered table-striped" style="width:100%">
     <thead>
         <tr>
